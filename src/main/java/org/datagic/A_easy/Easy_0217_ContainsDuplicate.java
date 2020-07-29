@@ -1,6 +1,5 @@
 package org.datagic.A_easy;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -71,13 +70,54 @@ public class Easy_0217_ContainsDuplicate {
      * 排序 然后查找是否有连续相同的元素
      */
     public static boolean containsDuplicateSort(int[] nums) {
-        Arrays.sort(nums);
+        // 这里使用堆排序 也可以直接 Arrays.sort(nums);
+        heapSort(nums);
         for (int i = 0; i < nums.length - 1; ++i) {
             if (nums[i] == nums[i + 1]) {
                 return true;
             }
         }
         return false;
+    }
+
+    public static int[] heapSort(int[] array) {
+        //构建大顶堆
+        for (int i = array.length / 2 - 1; i >= 0; i--) {
+            //从第一个非叶子节点从下至上，从右至左调整结构
+            adjustHeap(array, i, array.length);
+        }
+        //调整堆结构+交换堆顶与末尾元素
+        for (int j = array.length - 1; j > 0; j--) {
+            swap(array, 0, j);
+            adjustHeap(array, 0, j);
+        }
+        return array;
+    }
+
+    public static void swap(int[] array, int a, int b) {
+        int temp = array[a];
+        array[a] = array[b];
+        array[b] = temp;
+    }
+
+    public static void adjustHeap(int[] array, int i, int length) {
+        int temp = array[i];
+        for (int k = i * 2 + 1; k < length; k = k * 2 + 1) {
+            if (k + 1 < length && array[k] < array[k + 1]) {
+                k++;
+            }
+            if (array[k] > temp) {
+                array[i] = array[k];
+                i = k;
+            } else {
+                break;
+            }
+        }
+        array[i] = temp;
+    }
+
+    public static int[] heapSortReview(int[] array) {
+        return array;
     }
 
     /**
