@@ -1,4 +1,4 @@
-package org.datagic.A_easy;
+package org.datagic.A_easy.array;
 
 /**
  * Desc: 买卖股票的最佳时机 II

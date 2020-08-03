@@ -1,4 +1,4 @@
-package org.datagic.A_easy;
+package org.datagic.A_easy.array;
 
 /**
  * Desc: 只出现一次的数字

@@ -1,4 +1,4 @@
-package org.datagic.A_easy;
+package org.datagic.A_easy.array;
 
 import java.util.Arrays;
 
