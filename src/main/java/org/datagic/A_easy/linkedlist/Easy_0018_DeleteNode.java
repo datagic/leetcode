@@ -37,11 +37,16 @@ public class Easy_0018_DeleteNode {
         listNode1.next = listNode9;
 
         // 删除之后并返回头结点
-        ListNode listNode = deleteNode(listNode4, 5);
+        ListNode res1 = deleteNode(listNode4, 5);
 
-        while (listNode != null) {
-            System.out.println(listNode.val);
-            listNode = listNode.next;
+        while (res1 != null) {
+            System.out.println(res1.val);
+            res1 = res1.next;
+        }
+
+        while (listNode4 != null) {
+            System.out.println(listNode4.val);
+            listNode4 = listNode4.next;
         }
 
     }
