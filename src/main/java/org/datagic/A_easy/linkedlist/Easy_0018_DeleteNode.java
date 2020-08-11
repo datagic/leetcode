@@ -44,11 +44,6 @@ public class Easy_0018_DeleteNode {
             res1 = res1.next;
         }
 
-        while (listNode4 != null) {
-            System.out.println(listNode4.val);
-            listNode4 = listNode4.next;
-        }
-
     }
 
     public static ListNode deleteNode(ListNode head, int val) {
