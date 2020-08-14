@@ -23,12 +23,16 @@ public class Easy_0234_IsPalindrome {
     public static void main(String[] args) {
         ListNode listNode1 = new ListNode(1);
         ListNode listNode2 = new ListNode(5);
-        ListNode listNode3 = new ListNode(5);
-        ListNode listNode4 = new ListNode(1);
+        ListNode listNode3 = new ListNode(6);
+        ListNode listNode4 = new ListNode(6);
+        ListNode listNode5 = new ListNode(5);
+        ListNode listNode6 = new ListNode(1);
 
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         listNode3.next = listNode4;
+        listNode4.next = listNode5;
+        listNode5.next = listNode6;
 
         boolean palindrome = isPalindrome(listNode1);
         boolean palindrome1 = isPalindrome1(listNode1);
@@ -36,6 +40,7 @@ public class Easy_0234_IsPalindrome {
         System.out.println(palindrome1);
     }
 
+    // 两个指针一个快一个慢，把慢的翻转过来然后和后面那一半去比较。
     public static boolean isPalindrome1(ListNode head) {
         if (head == null || head.next == null) {
             return true;
