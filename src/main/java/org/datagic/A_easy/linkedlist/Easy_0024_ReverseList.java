@@ -36,18 +36,28 @@ public class Easy_0024_ReverseList {
     }
 
     public static ListNode reverseList(ListNode head) {
-        if (head == null || head.next == null) {
-            return head;
+//        if (head == null || head.next == null) {
+//            return head;
+//        }
+//        ListNode pre = new ListNode(0);
+//        ListNode tmp;
+//        while (head != null) {
+//            tmp = pre.next;
+//            ListNode l = new ListNode(head.val);
+//            pre.next = l;
+//            pre.next.next = tmp;
+//            head = head.next;
+//        }
+//        return pre.next;
+
+        ListNode curr = head;
+        ListNode prev = null;
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
         }
-        ListNode pre = new ListNode(0);
-        ListNode tmp;
-        while (head != null) {
-            tmp = pre.next;
-            ListNode l = new ListNode(head.val);
-            pre.next = l;
-            pre.next.next = tmp;
-            head = head.next;
-        }
-        return pre.next;
+        return prev;
     }
 }
