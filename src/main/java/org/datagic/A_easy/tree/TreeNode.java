@@ -15,4 +15,31 @@ public class TreeNode {
     TreeNode(int x) {
         val = x;
     }
+
+    public static void qianxu(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        System.out.println(root.val);
+        qianxu(root.left);
+        qianxu(root.right);
+    }
+
+    public static void zhongxu(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        zhongxu(root.left);
+        System.out.println(root.val);
+        zhongxu(root.right);
+    }
+
+    public static void houxu(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        houxu(root.left);
+        houxu(root.right);
+        System.out.println(root.val);
+    }
 }

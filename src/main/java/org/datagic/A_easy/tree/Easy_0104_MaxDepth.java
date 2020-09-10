@@ -1,6 +1,5 @@
 package org.datagic.A_easy.tree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -37,14 +36,18 @@ public class Easy_0104_MaxDepth {
         left.left = lleft;
         root.right = right;
         right.right = rright;
-        int ii = maxDepth2(root);
-        System.out.println(ii);
+//        int ii = maxDepth2(root);
+//        System.out.println(ii);
+//
+//        List l = new ArrayList<TreeNode>();
+//        List<TreeNode> list = preorderTraverse(root, l);
+//        for (TreeNode t : list) {
+//            System.out.println(t.val);
+//        }
 
-        List l = new ArrayList<TreeNode>();
-        List<TreeNode> list = preorderTraverse(root, l);
-        for (TreeNode t : list) {
-            System.out.println(t.val);
-        }
+        //TreeNode.qianxu(root);
+        //TreeNode.zhongxu(root);
+        TreeNode.houxu(root);
     }
 
     public static List<TreeNode> preorderTraverse(TreeNode node, List list) {
